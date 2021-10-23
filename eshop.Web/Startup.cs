@@ -1,7 +1,9 @@
 using eshop.Web.Data;
 using eShop.DataStore.HardCoded;
 using eShop.ShoppingCart.LocalStorage;
+using eShop.StateStore.DI;
 using eShop.UseCases.PluginInterfaces.DataStore;
+using eShop.UseCases.PluginInterfaces.StateStore;
 using eShop.UseCases.PluginInterfaces.UI;
 using eShop.UseCases.SearchProductScreen;
 using eShop.UseCases.ShoppingCartScreen;
@@ -40,6 +42,7 @@ namespace eshop.Web
             services.AddSingleton<IProductRepository, ProductRepository>();
 
             services.AddScoped<IShoppingCart, ShoppingCart>();
+            services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
