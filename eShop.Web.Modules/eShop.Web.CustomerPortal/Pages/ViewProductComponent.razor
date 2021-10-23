@@ -3,7 +3,7 @@
 @inject NavigationManager navigationManager
 
 @inject IViewProductUseCase viewProductUseCase
-@inject AddProductToCartUseCase  addProductToCartUseCase
+@inject IAddProductToCartUseCase  addProductToCartUseCase
 
 <h3>Product Details</h3>
 
@@ -40,7 +40,7 @@
 
     private void AddToCart()
     {
-        addProductToCartUseCase.Execute(product.Id);
+        addProductToCartUseCase.Execute(product.ProductId);
         navigationManager.NavigateTo("/");
     } 
 }
