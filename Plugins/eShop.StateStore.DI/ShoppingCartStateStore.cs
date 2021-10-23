@@ -33,7 +33,7 @@ namespace eShop.StateStore.DI
 
         public void ProductQuantityUpdated()
         {
-            throw new NotImplementedException();
+            base.BroadCastStateChange();
         }
     }
 }
