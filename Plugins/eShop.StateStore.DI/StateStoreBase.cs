@@ -8,14 +8,17 @@ namespace eShop.StateStore.DI
 
         protected Action listeners;
 
-        public void AddStateChangeListeners(Action listener) => listeners += listener;
+        public void AddStateChangeListeners(Action listener)
+            => this.listeners += listener;
 
-        public void RemoveStateChangeListeners(Action listener) => listeners -= listener;
+
+        public void RemoveStateChangeListeners(Action listener)
+            => this.listeners -= listener;
 
 
         public void BroadCastStateChange()
         {
-            if (listeners != null) listeners.Invoke();
+            if (this.listeners != null) this.listeners.Invoke();
         }
 
     }

@@ -2,12 +2,12 @@
 using eShop.UseCases.PluginInterfaces.DataStore;
 using eShop.UseCases.PluginInterfaces.UI;
 using Microsoft.JSInterop;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace eShop.ShoppingCart.LocalStorage
 {
@@ -21,6 +21,13 @@ namespace eShop.ShoppingCart.LocalStorage
         {
             this.jSRuntime = jSRuntime;
             this.productRepository = productRepository;
+        }
+
+
+        public async Task<Order> GetOrderAsync()
+        {
+            return await GetOrder();
+
         }
 
         public async Task<Order> AddProductAsync(Product product)
@@ -48,11 +55,7 @@ namespace eShop.ShoppingCart.LocalStorage
             return this.SetOrder(null);
         }
 
-        public async Task<Order> GetOrderAsync()
-        {
-            return await GetOrder();
 
-        }
 
         public Task<Order> PlaceOrderAsync()
         {
@@ -67,6 +70,7 @@ namespace eShop.ShoppingCart.LocalStorage
 
         public async Task<Order> UpdateQuantityAsync(int productId, int quantity)
         {
+
             var order = await GetOrder();
             if (quantity < 0)
                 return order;
@@ -74,12 +78,11 @@ namespace eShop.ShoppingCart.LocalStorage
                 return await DeleteProductAsync(productId);
 
             var lineItem = order.LineItems.SingleOrDefault(x => x.ProductId == productId);
-            if (lineItem != null)
-                lineItem.Quantity = quantity;
-
+            if (lineItem != null) lineItem.Quantity = quantity;
             await SetOrder(order);
 
             return order;
+
         }
 
         private async Task<Order> GetOrder()
@@ -87,7 +90,6 @@ namespace eShop.ShoppingCart.LocalStorage
             Order order = null;
 
             var strOrder = await jSRuntime.InvokeAsync<string>("localStorage.getItem", cstrShoppingCart);
-
             if (!string.IsNullOrWhiteSpace(strOrder) && strOrder.ToLower() != "null")
                 order = JsonConvert.DeserializeObject<Order>(strOrder);
             else

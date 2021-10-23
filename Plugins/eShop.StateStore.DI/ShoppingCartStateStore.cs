@@ -20,7 +20,7 @@ namespace eShop.StateStore.DI
         public async Task<int> GetLineItemsCount()
         {
             var order = await shoppingCart.GetOrderAsync();
-            if(order != null && order.LineItems != null && order.LineItems.Count > 0)
+            if (order != null && order.LineItems != null && order.LineItems.Count > 0)
                 return order.LineItems.Count;
 
             return 0;
