@@ -12,7 +12,10 @@
         <ul>
             @for (var i = 0; i < order.LineItems.Count; i++)
            {
-               <LineItemComponent LineItem="order.LineItems[i]" />
+               <LineItemComponent 
+               LineItem="order.LineItems[i]" 
+               OnDeleteProduct="HandleDeleteProduct" 
+               OnUpdateQuantity="HandleUpdateQuantity" />
 
                 @if(i < order.LineItems.Count - 1)
                 {
@@ -43,5 +46,15 @@ else
             order = await viewShoppingCartUseCase.Execute();
             StateHasChanged();
         }
+    }
+
+    private void HandleDeleteProduct(Order order)
+    {
+        this.order = order;
+    }
+
+    private void HandleUpdateQuantity(Order order)
+    {
+        this.order = order;
     }
 }
