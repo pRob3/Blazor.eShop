@@ -18,7 +18,7 @@ namespace eShop.CoreBusiness.Models
         public DateTime? DateProcessed { get; set; }
 
         public string CustomerName { get; set; }
-        public string CustomerAdress { get; set; }
+        public string CustomerAddress { get; set; }
         public string CustomerCity { get; set; }
         public string CustomerStateProvince { get; set; }
         public string CustomerCountry { get; set; }

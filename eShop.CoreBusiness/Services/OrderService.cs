@@ -41,7 +41,7 @@ namespace eShop.CoreBusiness.Services
             // Validate customer info
             if (!ValidateCustomerInformation(
                 order.CustomerName,
-                order.CustomerAdress,
+                order.CustomerAddress,
                 order.CustomerCity,
                 order.CustomerStateProvince,
                 order.CustomerCountry)) return false;
@@ -81,7 +81,7 @@ namespace eShop.CoreBusiness.Services
             // Validate customer info
             if (!ValidateCustomerInformation(
                 order.CustomerName,
-                order.CustomerAdress,
+                order.CustomerAddress,
                 order.CustomerCity,
                 order.CustomerStateProvince,
                 order.CustomerCountry)) return false;
