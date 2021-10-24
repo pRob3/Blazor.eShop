@@ -20,7 +20,7 @@ namespace eShop.DataStore.HardCoded
         public int CreateOrder(Order order)
         {
             order.OrderId = orders.Count + 1;
-            order.UniqueId = Guid.NewGuid().ToString();
+            //order.UniqueId = Guid.NewGuid().ToString();
             orders.Add(order.OrderId.Value, order);
 
             return order.OrderId.Value;
