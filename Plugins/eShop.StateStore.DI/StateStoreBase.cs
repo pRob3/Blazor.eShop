@@ -1,4 +1,4 @@
-﻿using eShop.UseCases.PluginInterfaces.StateStore;
+﻿using eShop.UseCases.CustomerPortal.PluginInterfaces.StateStore;
 using System;
 
 namespace eShop.StateStore.DI

@@ -1,6 +1,6 @@
 ﻿using eShop.CoreBusiness.Models;
-using eShop.UseCases.PluginInterfaces.DataStore;
-using eShop.UseCases.PluginInterfaces.UI;
+using eShop.UseCases.CustomerPortal.PluginInterfaces.DataStore;
+using eShop.UseCases.CustomerPortal.PluginInterfaces.UI;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
