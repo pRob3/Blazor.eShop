@@ -10,19 +10,18 @@ namespace eshop.Web.Controllers
     {
 
         [Route("/authenticate")]
-        public async Task<IActionResult> Authenticate([FromQuery] string user, [FromQuery] string pwd)
+        public async Task<IActionResult> Authenticate([FromQuery] string usr, [FromQuery] string pwd)
         {
-            if(user == "admin" && pwd == "adminadmin")
+            if (usr == "admin" && pwd == "adminadmin")
             {
                 var userClaims = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.Name, user),
-                    new Claim(ClaimTypes.Email, "admin@example.com"),
+                    new Claim(ClaimTypes.Name, usr),
+                    new Claim(ClaimTypes.Email, "admin@eshop.com"),
                     new Claim(ClaimTypes.HomePhone, "12345678")
                 };
 
                 var userIdentity = new ClaimsIdentity(userClaims, "eShop.CookieAuth");
-
                 var userPrincipal = new ClaimsPrincipal(userIdentity);
 
                 await HttpContext.SignInAsync("eShop.CookieAuth", userPrincipal);
