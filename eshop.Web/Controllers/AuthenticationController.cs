@@ -17,7 +17,7 @@ namespace eshop.Web.Controllers
                 var userClaims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.Name, usr),
-                    new Claim(ClaimTypes.Email, "admin@eshop.com"),
+                    new Claim(ClaimTypes.Email, "admin@example.com"),
                     new Claim(ClaimTypes.HomePhone, "12345678")
                 };
 
