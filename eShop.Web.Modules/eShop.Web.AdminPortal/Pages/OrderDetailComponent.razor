@@ -48,8 +48,18 @@
     [Parameter]
     public int Id { get; set; } = 0;
 
-
     private Order order;
+    private AuthenticationState authState;
+
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authStateTask { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        authState = await authStateTask;
+    }
 
     protected override void OnParametersSet()
     {
@@ -63,9 +73,9 @@
 
     private void HandleProcessOrder()
     {
-        if (order != null)
+        if (order != null && authState != null)
         {
-            processOrderUseCase.Execute(order.OrderId.Value, "admin");
+            processOrderUseCase.Execute(order.OrderId.Value, authState.User.Identity.Name);
 
             NavigationManager.NavigateTo("outstandingorders");
         }
