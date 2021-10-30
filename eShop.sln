@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.ShoppingCart.LocalSto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.StateStore.DI", "Plugins\eShop.StateStore.DI\eShop.StateStore.DI.csproj", "{558020C4-18F3-4682-B572-C0EAF3536751}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.DataStore.SQL.Dapper", "Plugins\eShop.DataStore.SQL.Dapper\eShop.DataStore.SQL.Dapper.csproj", "{2AE040E0-AB85-4753-BADC-1ABA99B123A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{558020C4-18F3-4682-B572-C0EAF3536751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{558020C4-18F3-4682-B572-C0EAF3536751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{558020C4-18F3-4682-B572-C0EAF3536751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE040E0-AB85-4753-BADC-1ABA99B123A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE040E0-AB85-4753-BADC-1ABA99B123A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE040E0-AB85-4753-BADC-1ABA99B123A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE040E0-AB85-4753-BADC-1ABA99B123A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{951A940C-9F2D-48A8-9795-D6360B1C2F13} = {86E3955B-1D83-4D92-9FE6-AC143C05A9CB}
 		{A88D9212-0454-4809-A09A-D035E2EB9CDB} = {CEAF949B-AD5A-41C5-93D6-32EE30EBFA9B}
 		{558020C4-18F3-4682-B572-C0EAF3536751} = {CEAF949B-AD5A-41C5-93D6-32EE30EBFA9B}
+		{2AE040E0-AB85-4753-BADC-1ABA99B123A6} = {CEAF949B-AD5A-41C5-93D6-32EE30EBFA9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A335F138-D658-4EC2-8334-9F34B0C2E36C}
